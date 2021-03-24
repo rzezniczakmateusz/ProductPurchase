@@ -10,20 +10,18 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage extends TestBase {
 
     /*** repozytorium elementów ***/
-//    @FindBy(xpath = "//a[contains(text(),'Koszulka West Ham United')]")
-//    WebElement westHamTshirt;
+    @FindBy(xpath = "//a[contains(text(),'Koszulka West Ham United')]")
+    WebElement westHamTshirt;
 
     /*** konstruktor ***/
-    public HomePage(WebDriver driver){
-        this.driver = driver;
+    public HomePage(){
         PageFactory.initElements(driver,this);
     }
 
     /*** metody ***/
-    public ProductPageWestHam clickOnTshirt(){
-        WebElement westHamTshirt = driver.findElement(By.xpath("//a[contains(text(),'Koszulka West Ham United')]"));
+    public void clickOnTshirt(){
         westHamTshirt.click();
-        return new ProductPageWestHam(driver);
+//        return new ProductPageWestHam();
     }
 
 }
